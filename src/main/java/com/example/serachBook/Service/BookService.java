@@ -1,0 +1,45 @@
+package com.example.serachBook.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.serachBook.Domain.Book;
+import com.example.serachBook.Repository.BookRepository;
+
+@Service
+public class BookService {
+
+	 @Autowired
+	 private BookRepository bookRepository;
+	 
+	 public List<Book> listBookAll(){
+		 return bookRepository.findAll();
+	 }
+	 
+	 public List<Book> listAll(String keyword){
+		 return bookRepository.findByTitleContainingIgnoreCase(keyword);
+	 }
+	 
+	 public Book getBookById(int id) {
+		    Optional<Book> userOptional = bookRepository.findById((long) id);
+		    if(userOptional.isPresent()) {
+		        return userOptional.get();
+		    }
+		    return null; // or throw a custom exception
+		}
+	 
+	  public void updateBook(Book book) {
+	        bookRepository.save(book); // Save or update the book
+	    }
+	 
+	  public void deleteBookById(long id) {
+	        if (bookRepository.existsById(id)) {
+	            bookRepository.deleteById(id); // Delete the book if it exists
+	        } else {
+	            throw new IllegalArgumentException("Book with ID " + id + " not found");
+	        }
+	    }
+}
