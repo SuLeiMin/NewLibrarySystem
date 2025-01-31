@@ -97,7 +97,6 @@ public class User {
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", role='" + role + '\'' +
-                ", createdAt=" + createdAt +
                 ", phoneNumber='" + phoneNumber + '\'' +  // Include phone number in toString
                 '}';
     }

@@ -2,7 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>図書館管理システム</title>
-<<<<<<< HEAD
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -25,7 +24,6 @@
 
     <div class="container mt-4">
         <h1 class="text-center mb-4">一覧</h1>
-=======
     <!-- Bootstrap CSS -->
     <link 
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
@@ -35,17 +33,12 @@
 <body>
     <div class="container mt-4">
         <h1 class="text-center mb-4">図書館管理システム</h1>
->>>>>>> develop
 
         <!-- Search Box -->
         <form method="get" th:action="@{/books}" class="mb-4">
             <div class="input-group">
-<<<<<<< HEAD
                 <input type="text" class="form-control" name="keyword" placeholder="タイトルで検索" th:value="${keyword}">
-=======
-                <input type="text" class="form-control" name="keyword" placeholder="タイトルで検索" 
-                       th:value="${keyword}">
->>>>>>> develop
+
                 <button class="btn btn-primary" type="submit">検索</button>
             </div>
         </form>
@@ -65,28 +58,18 @@
             <tbody>
                 <tr th:each="book : ${books}">
                     <td th:text="${book.id}"></td>
-<<<<<<< HEAD
-                    <td><a th:href="@{/book/details/{id}(id=${book.id})}" th:text="${book.title}"></a></td>
-=======
                     <td>
                         <a th:href="@{/book/details/{id}(id=${book.id})}" 
                            th:text="${book.title}">
                         </a>
                     </td>
->>>>>>> develop
+
                     <td th:text="${book.author}"></td>
                     <td th:text="${book.year}"></td>
                     <td th:text="${book.genre}"></td>
                     <td>
                         <!-- Edit Button -->
-<<<<<<< HEAD
-                        <a th:href="@{/books/edit/{id}(id=${book.id})}" class="btn btn-primary btn-sm">編集</a>
-                        &nbsp;&nbsp;
-                        <!-- Delete Button -->
-                        <form th:action="@{/books/delete/{id}(id=${book.id})}" method="post" style="display:inline;">
-                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('本当に削除しますか？');">削除</button>
-=======
+
                         <a th:href="@{/books/edit/{id}(id=${book.id})}" class="btn btn-primary btn-sm" style="display: inline-block;">編集</a>
                        &nbsp;&nbsp;
                         <!-- Delete Button -->
@@ -95,7 +78,7 @@
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                             
                              <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('本当に削除しますか？');">削除</button>
->>>>>>> develop
+
                         </form>
                     </td>
                 </tr>
@@ -108,14 +91,13 @@
         </div>
     </div>
 
-<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-=======
+
     <!-- Bootstrap JS (optional, for interactive features) -->
     <script 
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js">
     </script>
->>>>>>> develop
+
     <script src="/js/delete_confirmation.js"></script>
 </body>
 </html>
