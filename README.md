@@ -45,13 +45,10 @@ This is a Library Management System built with the following tech stack:
 
 6. Open your browser and go to:
     ```
-    http://localhost:8080
+    http://localhost:8181
     ```
 
-## License
 
-This project is licensed under the MIT License.
 
----
 
 Feel free to contribute, open issues, or submit pull requests.
