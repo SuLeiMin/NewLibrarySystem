@@ -4,26 +4,19 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-<<<<<<< HEAD
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-=======
-import org.springframework.security.web.SecurityFilterChain;
-
-@Configuration
-
->>>>>>> develop
 public class SecurityConfig {
 
     // SecurityFilterChain for Spring Boot 2.x & Spring Security 5.x+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-<<<<<<< HEAD
         .authorizeHttpRequests(auth -> auth
         	.requestMatchers("/").permitAll()
         	.requestMatchers("/index").permitAll()
@@ -47,12 +40,5 @@ public class SecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-=======
-            .csrf().disable()  // Disable CSRF (for testing, not recommended in production)
-            .authorizeRequests()
-            .requestMatchers("/**").permitAll()  // Allow all access to book routes
-            .anyRequest().authenticated();  // Other routes require authentication
-        return http.build();
->>>>>>> develop
     }
 }
