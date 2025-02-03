@@ -21,7 +21,6 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 
-	//initial loading page
 	@GetMapping("/")
 	public String showAddBookForm(Model model) {
 		List<Book> bookList = bookService.listBookAll();
@@ -30,10 +29,8 @@ public class BookController {
 	}
 
 	@GetMapping("/books")
-    public String listBooks(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
+        public String listBooks(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
         List<Book> books;
-
-        // Check if a keyword is provided for search
         if (keyword != null && !keyword.isEmpty()) {
             books = bookService.listAll(keyword);
         } else {
@@ -43,7 +40,6 @@ public class BookController {
         return "index";
     }
 	
-	// Show the form to add a new book
     @GetMapping("/books/register")
     public String addBookForm(Model model) {
     	Book book = new Book();
@@ -55,14 +51,13 @@ public class BookController {
         return "add-book"; 
     }
 
-    // Save the new book
     @PostMapping("/books/register")
     public String saveNewBook(@ModelAttribute Book book) {
         bookService.saveBook(book); 
         return "redirect:/books"; 
     }
 	
-	@GetMapping("/books/edit/{id}")
+    @GetMapping("/books/edit/{id}")
     public String editBookForm(@PathVariable("id") int id, Model model) throws Exception {
 		Book book = bookService.getBookById(id); 
 	    if (book == null) {
@@ -80,14 +75,12 @@ public class BookController {
         return "index"; 
     }
     
-    
     @PostMapping("/books/delete/{id}")
     public String deleteBook(@PathVariable Long id) {
         bookService.deleteBookById(id); 
         return "index"; 
     }
     
-    // Display book details
     @GetMapping("/book/details/{id}")
     public String getBookDetails(@PathVariable int id, Model model) {
         Book book = bookService.getBookById(id);
