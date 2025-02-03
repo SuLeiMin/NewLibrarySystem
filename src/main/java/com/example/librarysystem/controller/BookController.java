@@ -1,4 +1,4 @@
-package com.example.serachBook.Controller;
+package com.example.librarysystem.controller;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.serachBook.Domain.Book;
-import com.example.serachBook.Service.BookService;
+import com.example.librarysystem.domain.Book;
+import com.example.librarysystem.service.BookService;
 
 @Controller
 public class BookController {

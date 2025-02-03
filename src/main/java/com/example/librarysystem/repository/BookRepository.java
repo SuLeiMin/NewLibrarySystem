@@ -1,11 +1,11 @@
-package com.example.serachBook.Repository;
+package com.example.librarysystem.repository;
 
-
-import com.example.serachBook.Domain.Book;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.librarysystem.domain.Book;
 
 public interface BookRepository  extends JpaRepository<Book, Long>{
 

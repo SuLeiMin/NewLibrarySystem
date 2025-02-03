@@ -1,4 +1,4 @@
-package com.example.serachBook.Config;
+package com.example.librarysystem.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

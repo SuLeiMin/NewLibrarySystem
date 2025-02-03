@@ -1,4 +1,4 @@
-package com.example.serachBook.Service;
+package com.example.librarysystem.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.serachBook.Domain.Book;
-import com.example.serachBook.Repository.BookRepository;
+import com.example.librarysystem.domain.Book;
+import com.example.librarysystem.repository.BookRepository;
 
 @Service
 public class BookService {

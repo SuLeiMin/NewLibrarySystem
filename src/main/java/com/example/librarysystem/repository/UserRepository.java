@@ -1,4 +1,4 @@
-package com.example.serachBook.Repository;
+package com.example.librarysystem.repository;
 
 public interface UserRepository {
 

@@ -1,4 +1,4 @@
-package com.example.serachBook.Domain;
+package com.example.librarysystem.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
